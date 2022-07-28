@@ -1,5 +1,6 @@
 import "./Search.css"
-import { useState, useEffect } from "react"
+import { useState } from "react"
+import { Link } from "react-router-dom"
 // import MovieCard from "../MovieCard/MovieCard"
 
 const Search = () => {
@@ -33,19 +34,34 @@ const Search = () => {
                     searchValue.results.map((result) => {  
                         if (result.media_type === "person") {
                             return (
-                                <div key={result.id} className="flex mt-4">
-                                    <img src="https://img.icons8.com/pastel-glyph/344/person-male--v3.png" width="30px"/>
-                                    <p className="info-category">{result.name}</p>    
-                                </div>
-                            )
-                        } else {  
-                            return (
+                                <Link to={`/details/${result.id}`}>
                                     <div key={result.id} className="flex mt-4">
-                                        <img src="https://img.icons8.com/ios-glyphs/344/movie--v1.png" width="30px"/>
-                                        <p className="info-category">{result.title}</p>
+                                        <img src="https://img.icons8.com/pastel-glyph/344/person-male--v3.png" width="30px" alt="person-icon"/>
+                                        <p className="search-result">{result.name}</p>    
                                     </div>
+                                </Link>
+                            )
+                        } else if (result.media_type === "movie") {  
+                            return (
+                                    <Link to={`/details/${result.id}`}>
+                                        <div key={result.id} className="flex mt-4">
+                                            <img src="https://img.icons8.com/ios-glyphs/344/movie--v1.png" width="30px" alt="film-icon"/>
+                                            <p className="search-result">{result.title}</p>
+                                        </div>
+                                    </Link>
                                 )
-                        }//return <MovieCard key={result.id} id={result.id} name={result.original_title} image={result.poster_path}/>
+                        } else {
+                            return (
+                                <Link to={`/details/${result.id}`}>
+                                    <div key={result.id} className="flex mt-4">
+                                        <img src="https://img.icons8.com/ios-filled/344/retro-tv.png" width="30px" alt="film-icon"/>
+                                        <p className="search-result">{result.name}</p>
+                                    </div>
+                                </Link>
+                            )
+                        }
+                        
+                        //return <MovieCard key={result.id} id={result.id} name={result.original_title} image={result.poster_path}/>
                     })
                     :
                     <div className="hidden"></div>

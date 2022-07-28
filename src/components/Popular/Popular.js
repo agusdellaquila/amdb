@@ -2,7 +2,6 @@ import "../Popular/Popular.css"
 import { useState, useEffect } from "react"
 import MovieCard from "../MovieCard/MovieCard"
 
-
 const Popular = () => {
     const [popular, setPopular] = useState([])
 

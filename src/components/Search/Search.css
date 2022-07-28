@@ -4,7 +4,16 @@
     border-radius: 5px;
 }
 .search-dropdown {
-    background-color: #474d60;
+    background-color: #e8e9ee;
     padding: 15px;
     width: auto;
+}
+.search-result {
+    background-color: #636e7c;
+    color: #ffffff;
+    width: max-content;
+    padding: 0rem 0.5rem;
+    margin-left: 15px;
+    text-align: center;
+    border-radius: 5px;
 }

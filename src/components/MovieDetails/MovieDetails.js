@@ -7,24 +7,23 @@ import Loading from "../Loading/Loading"
 const MovieDetails = () => {
     const { id } = useParams()
     const [details, setDetails] = useState([])
-    const [providers, setProviders] = useState([])
-
-    const getData = () => {
-        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=1f8069ed4f38d7cc4488d811853acf0a`)
-        .then(data => data.json())
-        .then(data => {
-            setDetails(data)
-        })
-
-        // fetch(`https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=1f8069ed4f38d7cc4488d811853acf0a`)
-        // .then(data => data.json())
-        // .then(data => {
-        //     console.log(data)
-        //     setProviders([data.results])
-        // })
-    }
+    // const [providers, setProviders] = useState([])
 
     useEffect(() => {
+        const getData = () => {
+            fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=1f8069ed4f38d7cc4488d811853acf0a`)
+            .then(data => data.json())
+            .then(data => {
+                setDetails(data)
+            })
+    
+            // fetch(`https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=1f8069ed4f38d7cc4488d811853acf0a`)
+            // .then(data => data.json())
+            // .then(data => {
+            //     console.log(data)
+            //     setProviders([data.results])
+            // })
+        }
         getData()
     }, [])
 
@@ -36,7 +35,7 @@ const MovieDetails = () => {
                 </Link>
             </div>
             <div className="details-movies-container">
-                <img className="cover-image" src={`https://image.tmdb.org/t/p/w400${details.poster_path}`} alt={`${details.title} image`}/>
+                <img className="cover-image" src={`https://image.tmdb.org/t/p/w400${details.poster_path}`} alt={`${details.title}`}/>
                 <div className="info-container-background">
                     <div className="info-container">
                         <p className="info-title">{details.title}</p>
@@ -45,11 +44,11 @@ const MovieDetails = () => {
 
                         <section className="info-quick-glance">
                             <div className="info-quick-glance-item">
-                                <img src="../images/duration-icon.png"/>
+                                <img src="../images/duration-icon.png" alt="duration-icon"/>
                                 <p className="info-quick-glance-item-p">{details.runtime}min</p>
                             </div>
                             <div className="info-quick-glance-item">
-                                <img src="../images/rating-icon.png"/>
+                                <img src="../images/rating-icon.png" alt="rating-icon"/>
                                 <p className="info-quick-glance-item-p">{details.vote_average}</p>
                             </div>
                         </section>
@@ -94,7 +93,7 @@ const MovieDetails = () => {
                         </div>
 
                         <div className="info-button">
-                            <a className="info-button-link">
+                            <a href="/" className="info-button-link">
                                 <p className="info-button-text">WATCH NOW</p>
                             </a>
                         </div>
