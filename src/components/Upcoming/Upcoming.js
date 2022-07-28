@@ -21,7 +21,7 @@ const Upcoming = () => {
     return (
         <section>
             <p className="text-3xl font-bold text-white p-2">Upcoming</p>
-            <div className="upcoming-movies-container">
+            <div className="home-movies-container">
                 {upcoming.map((movie) => {
                     return <MovieCard key={movie.id} id={movie.id} name={movie.original_title} image={movie.poster_path}/>
                 })}

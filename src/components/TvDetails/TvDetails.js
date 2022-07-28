@@ -1,17 +1,17 @@
-import "../MovieDetails/MovieDetails.css"
+import "../TvDetails/TvDetails.css"
 import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Loading from "../Loading/Loading"
 
-const MovieDetails = () => {
+const TvDetails = () => {
     const { id } = useParams()
     const [details, setDetails] = useState([])
     // const [providers, setProviders] = useState([])
 
     useEffect(() => {
         const getData = () => {
-            fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=1f8069ed4f38d7cc4488d811853acf0a`)
+            fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=1f8069ed4f38d7cc4488d811853acf0a&language=en-US`)
             .then(data => data.json())
             .then(data => {
                 setDetails(data)
@@ -30,7 +30,6 @@ const MovieDetails = () => {
 
     return (
         <section>
-
             <div className="details-container">
                 <img className="cover-image" src={`https://image.tmdb.org/t/p/w400${details.poster_path}`} alt={`${details.title}`}/>
                 <div className="info-back-tab">
@@ -129,4 +128,4 @@ const MovieDetails = () => {
     )
 }
 
-export default MovieDetails
+export default TvDetails

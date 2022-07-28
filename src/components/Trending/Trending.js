@@ -21,10 +21,13 @@ const Trending = () => {
     return (
         <section>
             <p className="text-3xl font-bold text-white p-2">Most Trending</p>
-            <div className="trending-movies-container">
-                {trending.map((movie) => {
-                    return <MovieCard key={movie.id} id={movie.id} name={movie.original_title} image={movie.poster_path}/>
-                })}
+            <div className="home-movies-container">
+                {
+                    trending.map((movie) => {
+                            console.log(movie)
+                            return <MovieCard key={movie.id} id={movie.id} name={movie.original_title} image={movie.poster_path}/>
+                    })
+                }
             </div>
         </section>
     )

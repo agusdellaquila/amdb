@@ -20,7 +20,7 @@ const Popular = () => {
     return (
         <section>
             <p className="text-3xl font-bold text-white p-2">Popular Movies</p>
-            <div className="popular-movies-container">
+            <div className="home-movies-container">
                 {popular.map((movie) => {
                     return <MovieCard key={movie.id} id={movie.id} name={movie.original_title} image={movie.poster_path}/>
                 })}

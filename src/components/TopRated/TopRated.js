@@ -21,7 +21,7 @@ const TopRated = () => {
     return (
         <section>
             <p className="text-3xl font-bold text-white p-2">TopRated</p>
-            <div className="topRated-movies-container">
+            <div className="home-movies-container">
                 {topRated.map((movie) => {
                     return <MovieCard key={movie.id} id={movie.id} name={movie.title} image={movie.poster_path}/>
                 })}

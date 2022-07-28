@@ -9,6 +9,7 @@ const Home = () => {
     return (
         <div>
             <div className="flex justify-around align-center mt-4 mb-4 mr-10">
+                <p className="text-white text-8xl">BUILDGING IN PROCESS</p>
                 <Search/>
                 <a href="/">
                     <img className="logo" src="/amdb-logo.png" />
