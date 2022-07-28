@@ -1,0 +1,1 @@
+const url = "https://api.themoviedb.org/3/movie/550?api_key=1f8069ed4f38d7cc4488d811853acf0a"

@@ -1,0 +1,9 @@
+.nav-container {
+    background-color: aqua;
+    display: none;
+    position: sticky;
+    height: 65px;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+}

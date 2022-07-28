@@ -1,0 +1,16 @@
+.popular-movies-container {
+    display:grid;
+    grid-auto-flow: column;
+    gap: 1em;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: xmandatory;
+    scrollbar-width: none;
+    width: 540px;
+    height: 325px;
+    object-fit: contain;
+    align-items: center;
+}
+.popular-movies-container ::-webkit-scrollbar {
+    display: none;
+}

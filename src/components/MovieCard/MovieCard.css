@@ -1,0 +1,18 @@
+.card-container {
+    width: 200px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.card-title {
+    font-weight: 600;
+}
+.card-container > img {
+    scroll-snap-align: start;
+}
+.card-container img {
+    border-radius:10px;
+}
